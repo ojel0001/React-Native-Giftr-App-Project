@@ -12,7 +12,7 @@ import PeopleContext from "../PeopleContext";
 import { useRoute, useNavigation } from "@react-navigation/native";
 import * as ImagePicker from "expo-image-picker";
 import { Camera } from "expo-camera";
-import { randomUUID } from "expo-crypto"; // For generating unique idea IDs
+import { randomUUID } from "expo-crypto"; 
 
 export default function AddIdeaScreen() {
   const [ideaText, setIdeaText] = useState("");
@@ -27,7 +27,7 @@ export default function AddIdeaScreen() {
   const [cameraRef, setCameraRef] = useState(null);
   const [isCameraVisible, setIsCameraVisible] = useState(false);
 
-  // Request permissions for camera and gallery
+  
   useEffect(() => {
     (async () => {
       const cameraStatus = await Camera.requestCameraPermissionsAsync();
@@ -44,7 +44,7 @@ export default function AddIdeaScreen() {
       const newIdea = {
         id: randomUUID(),
         text: ideaText,
-        img: imageUri, // Save image URI
+        img: imageUri, 
       };
       addIdea(personId, newIdea);
       navigation.goBack();
@@ -67,7 +67,7 @@ export default function AddIdeaScreen() {
     });
 
     if (!result.canceled) {
-      setImageUri(result.assets[0].uri); // Correctly setting image URI
+      setImageUri(result.assets[0].uri);
     }
   };
 
@@ -80,7 +80,7 @@ export default function AddIdeaScreen() {
     if (cameraRef) {
       let photo = await cameraRef.takePictureAsync();
       setImageUri(photo.uri);
-      setIsCameraVisible(false); // Hide camera after taking a photo
+      setIsCameraVisible(false); 
     }
   };
 

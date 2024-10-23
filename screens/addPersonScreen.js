@@ -4,7 +4,7 @@ import { StyleSheet, View, TextInput, Button, Alert } from "react-native";
 import PeopleContext from "../PeopleContext";
 import { useNavigation } from "@react-navigation/native";
 import DatePicker from "react-native-modern-datepicker";
-import { randomUUID } from "expo-crypto"; // For unique ID generation
+import { randomUUID } from "expo-crypto"; 
 
 export default function AddPersonScreen() {
   const [name, setName] = useState("");
@@ -14,7 +14,7 @@ export default function AddPersonScreen() {
 
   const savePerson = () => {
     if (name && dob) {
-      // Use randomUUID to generate a unique ID for the new person
+      
       const newPerson = {
         id: randomUUID(),
         name,
@@ -22,9 +22,9 @@ export default function AddPersonScreen() {
         ideas: [],
       };
       addPerson(newPerson);
-      navigation.goBack(); // Navigate back to PeopleScreen
+      navigation.goBack();
     } else {
-      // Use Alert to notify the user about validation errors
+      
       Alert.alert(
         "Validation Error",
         "Please enter both a name and a date of birth."

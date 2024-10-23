@@ -16,7 +16,6 @@ export default function PeopleScreen() {
   const { people } = useContext(PeopleContext);
 
   const navigateToIdeaScreen = (personId) => {
-    // Navigate to IdeaScreen, passing the personId as a param
     navigation.navigate("Ideas", { personId });
   };
 
@@ -33,7 +32,7 @@ export default function PeopleScreen() {
             keyExtractor={(item) => item.id}
             renderItem={({ item }) => (
               <View style={styles.container}>
-                {/* Render each person as a button */}
+                
                 <TouchableOpacity
                   style={styles.personButton}
                   onPress={() => navigateToIdeaScreen(item.id)}
@@ -47,7 +46,7 @@ export default function PeopleScreen() {
           />
         )}
 
-        {/* Button to navigate to AddPersonScreen */}
+        
         <TouchableOpacity
           style={styles.addButton}
           onPress={() => navigation.navigate("AddPerson")}
@@ -63,7 +62,7 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     padding: 16,
-    backgroundColor: "#f8f9fa", // Light background color
+    backgroundColor: "#f8f9fa", 
   },
   container: {
     flex: 1,
@@ -72,28 +71,27 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   personButton: {
-    backgroundColor: "#007bff", // Bootstrap primary color
-    borderRadius: 8,
+    backgroundColor: "#007bff", 
     padding: 12,
-    width: "100%", // Full width
+    width: "100%", 
     alignItems: "center",
   },
   addButton: {
-    backgroundColor: "#28a745", // Bootstrap success color
+    backgroundColor: "#28a745", 
     borderRadius: 8,
     padding: 12,
     marginTop: 20,
     alignItems: "center",
   },
   buttonText: {
-    color: "#fff", // White text
+    color: "#fff", 
     fontSize: 16,
     fontWeight: "bold",
   },
   emptyText: {
     textAlign: "center",
     fontSize: 18,
-    color: "#6c757d", // Gray color for empty state
+    color: "#6c757d", 
     marginTop: 20,
   },
 });

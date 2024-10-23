@@ -12,7 +12,6 @@ export default function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* Ensure you're using Stack.Screen for each page */}
         <Stack.Screen name="People" component={PeopleScreen} />
         <Stack.Screen name="AddPerson" component={AddPersonScreen} />
         <Stack.Screen name="Ideas" component={IdeaScreen} />

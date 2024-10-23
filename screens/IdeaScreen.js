@@ -38,7 +38,6 @@ export default function IdeaScreen() {
         <Text>No ideas available. Add some ideas!</Text>
       )}
 
-      {/* Button to navigate to AddIdeaScreen */}
       <Button
         title="Add Idea"
         onPress={() => navigation.navigate("AddIdea", { personId })}
