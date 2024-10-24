@@ -1,4 +1,3 @@
-//addPersonScreen
 import React, { useContext, useState } from "react";
 import { StyleSheet, View, TextInput, Button, Alert } from "react-native";
 import PeopleContext from "../PeopleContext";

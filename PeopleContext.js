@@ -26,6 +26,10 @@ export const PeopleProvider = ({ children }) => {
     savePeople(updatedPeople);
   };
 
+   const deletePerson = (personId) => {
+     setPeople(people.filter((person) => person.id !== personId));
+   };
+
   const addIdea = (personId, idea) => {
     const updatedPeople = people.map((person) =>
       person.id === personId
@@ -36,7 +40,9 @@ export const PeopleProvider = ({ children }) => {
   };
 
   return (
-    <PeopleContext.Provider value={{ people, addPerson, addIdea }}>
+    <PeopleContext.Provider
+      value={{ people, addPerson, addIdea, deletePerson }}
+    >
       {children}
     </PeopleContext.Provider>
   );
